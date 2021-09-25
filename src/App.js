@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import MainHeader from './components/MainHeader/MainHeader';
+import Login from './components/Login/Login';
 
 function App() {
   return (
-    <React.Fragment className="App">
+    <Fragment>
       <MainHeader />
-    </React.Fragment>
+      <Login />
+    </Fragment>
   );
 }
 
