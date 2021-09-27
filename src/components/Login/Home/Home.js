@@ -1,8 +1,9 @@
 import Card from '../../UI/Card/Card';
+import classes from './Home.module.css';
 
-const Home = () => {
+const Home = (props) => {
 	return (
-		<Card>
+		<Card className={classes.home}>
 			<h1>Welcome Home</h1>
 		</Card>
 	)
