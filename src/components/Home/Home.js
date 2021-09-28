@@ -1,4 +1,4 @@
-import Card from '../../UI/Card/Card';
+import Card from '../UI/Card/Card';
 import classes from './Home.module.css';
 
 const Home = (props) => {
