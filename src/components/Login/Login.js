@@ -38,20 +38,23 @@ const Login = (props) => {
 	const [emailState, dispatchEmail] = useReducer(emailReducer, {value: '', isValid: null});
 	const [passwordState, dispatchPassword] = useReducer(	passwordReducer, {value: '', isValid: null});
 
+	const { isValid: emailIsValid } = emailState;
+	const { isValid: passwordIsValid } = passwordState;
+
 	useEffect(()=> {
 		const identifier = setTimeout(() => {
-			// console.log('Checking Form Validation!');
+			console.log('Checking Form Validation!');
 			setFormIsValid(
-				emailState.isValid && passwordState.isValid
+				emailIsValid && passwordIsValid
 			);
 		}, 500);
 
 		return () => {
-			// console.log('CLEAN UP ' + emailState.value);
+			console.log('CLEAN UP ');
 			clearTimeout(identifier);
 		};
 
-	}, [emailState, passwordState]);
+	}, [emailIsValid, passwordIsValid]);
 
 	const emailChangeHandler = (event) => {
 		dispatchEmail({ type: ACTIONS.EMAIL_CHANGE, payload: {val: event.target.value} });
